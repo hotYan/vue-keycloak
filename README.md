@@ -12,9 +12,11 @@ $ npm install keycloak-js
 ```
 
 ### 2. 封装 keycloak 初始化（utils）
-在 utils 目录下新增 keycloak.js  或 keycloakInstall.js  文件。
+- 在 utils 目录下新增 keycloak.js  或 keycloakInstall.js  文件;
 
+- 在初始化时，onLoad 字段 可以是 `login-required` 或者 `check-sso`,[查看文档](https://www.keycloak.org/docs/latest/securing_apps/index.html#using-the-adapter);
 
+- `login-required` 适用于必须登录的项目，`check-sso` 适用不登录也可以查看界面的项目，例如门户。
 ### 3. 修改 main.js
 在入口文件 main.js 中初始化 keycloak ：
 ```js
